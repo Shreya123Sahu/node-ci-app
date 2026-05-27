@@ -31,4 +31,7 @@ jobs:
         run: docker build -t node-ci-app .
 
       - name: Run the container
-        run: docker run -p 8080:3000 node-ci-app 
+        run: docker run -d -p 8080:3000 node-ci-app 
+      
+      - name: Check running containers
+        run: docker ps
